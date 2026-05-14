@@ -14,7 +14,7 @@ function App() {
   return (
     <main className="container">
       <header className="hero">
-        <span className="badge">KRA · Learning &amp; Innovation</span>
+        <span className="badge">Learning &amp; Innovation</span>
         <h1>CI/CD Pipeline Demo 2</h1>
         <p className="lead">
           A React + TypeScript app, automatically linted, tested, built and

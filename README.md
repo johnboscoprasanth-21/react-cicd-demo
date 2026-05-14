@@ -1,11 +1,11 @@
 # React CI/CD Pipeline Demo
 
-[![CI/CD](https://github.com/<your-username>/react-cicd-demo/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/<your-username>/react-cicd-demo/actions/workflows/ci-cd.yml)
+[![CI/CD](https://github.com/Prasanth2721/react-cicd-demo/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Prasanth2721/react-cicd-demo/actions/workflows/ci-cd.yml)
 
 > **KRA — Learning & Innovation · Topic: CI/CD pipeline**
 > A React + TypeScript app, automatically linted, tested, built and deployed by GitHub Actions on every push to `main`.
 
-**Live demo:** https://&lt;your-username&gt;.github.io/react-cicd-demo/
+**Live demo:** https://Prasanth2721.github.io/react-cicd-demo/
 
 ---
 

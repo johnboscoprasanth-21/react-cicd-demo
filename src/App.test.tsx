@@ -1,29 +1,46 @@
 import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import { describe, it, expect } from 'vitest'
+import { beforeEach, describe, it, expect } from 'vitest'
 import App from './App'
 
+beforeEach(() => {
+  localStorage.clear()
+})
+
 describe('App', () => {
-  it('renders the demo heading', () => {
+  it('renders the CI/CD demo heading', () => {
     render(<App />)
     expect(
-      screen.getByRole('heading', { name: /CI\/CD Pipeline Demo/i }),
+      screen.getByRole('heading', { level: 1, name: /CI\/CD Pipeline Demo/i }),
     ).toBeInTheDocument()
   })
 
-  it('lists all four pipeline stages', () => {
+  it('shows the ContentPilot brand', () => {
+    render(<App />)
+    expect(screen.getByText('ContentPilot')).toBeInTheDocument()
+    expect(
+      screen.getByText(/Workflow management with agility/i),
+    ).toBeInTheDocument()
+  })
+
+  it('renders the live IST clock', () => {
+    render(<App />)
+    expect(screen.getByLabelText(/Current time in IST/i)).toBeInTheDocument()
+  })
+
+  it('lists all four CI/CD pipeline stages', () => {
     render(<App />)
     for (const stage of ['Lint', 'Test', 'Build', 'Deploy']) {
       expect(screen.getByText(stage)).toBeInTheDocument()
     }
   })
 
-  it('increments the click counter', async () => {
-    const user = userEvent.setup()
+  it('renders the Article Production Tracker', () => {
     render(<App />)
-    const button = screen.getByRole('button', { name: /sanity click/i })
-    expect(button).toHaveTextContent('It works (0)')
-    await user.click(button)
-    expect(button).toHaveTextContent('It works (1)')
+    expect(
+      screen.getByRole('heading', {
+        level: 2,
+        name: /Article Production Tracker/i,
+      }),
+    ).toBeInTheDocument()
   })
 })
